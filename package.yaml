@@ -1,6 +1,6 @@
-name:                compoundHeterozygote
+name:                compoundHeterozygotes
 version:             0.1.0.0
-github:              "Helkafen/compoundHeterozygote"
+github:              "Helkafen/compoundHeterozygotes"
 license:             BSD3
 author:              "Sébastian Méric de Bellefon"
 maintainer:          "arnaudpourseb@gmail.com"
@@ -33,15 +33,15 @@ library:
   source-dirs: src
 
 executables:
-  compoundHeterozygote:
+  compoundHeterozygotes:
     main:                Main.hs
     source-dirs:         app
     ghc-options:         [-O2, -Wall, -Werror]
     dependencies:
-    - compoundHeterozygote
+    - compoundHeterozygotes
 
 tests:
-  compoundHeterozygote-test:
+  compoundHeterozygotes-test:
     main:                Spec.hs
     source-dirs:         test
     ghc-options:
@@ -49,7 +49,7 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - compoundHeterozygote
+    - compoundHeterozygotes
     - tasty
     - tasty-discover
     - tasty-hunit
