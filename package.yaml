@@ -1,0 +1,56 @@
+name:                compoundHeterozygote
+version:             0.1.0.0
+github:              "Helkafen/compoundHeterozygote"
+license:             BSD3
+author:              "Sébastian Méric de Bellefon"
+maintainer:          "arnaudpourseb@gmail.com"
+copyright:           "2018 Sébastian Méric de Bellefon"
+
+extra-source-files:
+- README.md
+
+description:         Discover compound heterozygotes, and represent them as regular variants
+
+dependencies:
+- base >= 4.7 && < 5
+- containers
+- cassava
+- text
+- vector
+- bytestring
+- protolude
+- QuickCheck
+- attoparsec
+- either-unwrap
+- zlib
+- errors
+- mtl
+default-extensions:
+- OverloadedStrings
+- ExtendedDefaultRules
+
+library:
+  source-dirs: src
+
+executables:
+  compoundHeterozygote:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:         [-O2, -Wall, -Werror]
+    dependencies:
+    - compoundHeterozygote
+
+tests:
+  compoundHeterozygote-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - compoundHeterozygote
+    - tasty
+    - tasty-discover
+    - tasty-hunit
+    - tasty-quickcheck
